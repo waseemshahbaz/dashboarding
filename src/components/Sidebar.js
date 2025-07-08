@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, Link } from 'react-router-dom';
 import { FaChartBar, FaBoxOpen, FaUsers, FaCog } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -21,7 +21,20 @@ export default function Sidebar() {
           transition={{ type: 'spring', stiffness: 200 }}
           className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-8"
         >
-          S
+          <Link
+            to="/home"
+            className="block rounded-full focus:outline-none"
+          >
+            <motion.span
+              whileHover={{ scale: 1.15, boxShadow: '0 0 16px #3b82f6' }}
+              whileTap={{ scale: 0.95, boxShadow: '0 0 24px #2563eb' }}
+              transition={{ type: 'spring', stiffness: 300 }}
+              className="inline-block px-3 py-1 cursor-pointer select-none"
+              aria-label="Go to Home"
+            >
+              S
+            </motion.span>
+          </Link>
         </motion.div>
         <nav className="flex flex-col space-y-6 flex-1">
           {navItems.map((item) => (
